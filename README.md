@@ -51,11 +51,17 @@ python3 -m pip install --upgrade pip
 ```shell
 pip install -r requirements.txt
 ```
-6. Применение миграций
+6. В корневой директории создать файл .env и заполнить своими данными:
+```
+BOT_TOKEN=bot_token 
+BASE_SITE=https://7016-80-85-143-232.ngrok-free.app
+ADMIN_ID=your_tg_id
+```
+7. Применение миграций
 ```shell
 alembic upgrade head
 ```
-7. Запуск проекта
+8. Запуск проекта
 ```shell
 uvicorn app.main:app
 ```
