@@ -13,7 +13,7 @@ templates = Jinja2Templates(directory='app/templates')
 @router.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html",
-                                      {"request": request, "title": "Элегантная парикмахерская"})
+                                      {"request": request, "title": "Cтудия маникюра RumNails"})
 
 
 @router.get("/form", response_class=HTMLResponse)
@@ -23,7 +23,7 @@ async def read_root(request: Request, user_id: int = None, first_name: str = Non
     data_page = {"request": request,
                  "user_id": user_id,
                  "first_name": first_name,
-                 "title": "Запись на услуги - Элегантная парикмахерская",
+                 "title": "Запись на услуги - Cтудия маникюра RumNails",
                  "masters": masters,
                  "services": services}
     return templates.TemplateResponse("form.html", data_page)
